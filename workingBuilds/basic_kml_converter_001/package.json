@@ -1,0 +1,13 @@
+{
+	"name": "basic-kml-converter",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Minimal Earth-to-object KML conversion review script.",
+	"main": "convertEarthKmlToObjectBasic_001.js",
+	"scripts": {
+		"convert": "node ./convertEarthKmlToObjectBasic_001.js"
+	},
+	"dependencies": {
+		"@xmldom/xmldom": "^0.9.10"
+	}
+}

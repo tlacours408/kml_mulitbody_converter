@@ -1,0 +1,6 @@
+node_modules/
+*.kml
+*.kmz
+*.ds
+*.dscp
+*.lis
