@@ -5,11 +5,6 @@ var path = require('path');
 var DOMParser = require('@xmldom/xmldom').DOMParser;
 var XMLSerializer = require('@xmldom/xmldom').XMLSerializer;
 
-/*
-This script is a small review artifact for the Earth-to-object KML conversion
-logic. It is intentionally limited to one readable command-line conversion
-path and is not a replacement for the production converter.
-*/
 
 /*
 Core conversion rule:
