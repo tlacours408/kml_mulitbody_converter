@@ -1,6 +1,25 @@
-# Ignore everything
+# Ignore everything at the repository root
 /*
-workingBuilds\basic_kml_converter_001\node_modules
+*.ds
+*.lis
 
-# Keep this folder and everything inside it
-!/basic_kml_converter_001/
+# Allow Git to inspect the parent folder
+!/workingBuilds/
+
+# Ignore archived working builds
+/workingBuilds/003/
+/workingBuilds/004/
+/workingBuilds/005/
+
+# Keep this build folder
+!/workingBuilds/basic_kml_converter_001/
+
+# Keep everything inside it
+!/workingBuilds/basic_kml_converter_001/**
+
+# Except dependencies
+/workingBuilds/basic_kml_converter_001/node_modules/
+
+# Ignore Digistar script and list files anywhere in the kept folder
+/workingBuilds/basic_kml_converter_001/**/*.ds
+/workingBuilds/basic_kml_converter_001/**/*.lis
