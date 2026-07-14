@@ -6,17 +6,11 @@ The basic build is located at [`workingBuilds/basic_kml_converter_001`](workingB
 
 ## Core conversion rule
 
-The script does not convert Earth coordinates by simply multiplying longitude and latitude by a planet-size ratio. That shortcut would treat degrees like a flat distance and would distort the result.
+The script converts Earth longitude and latitude into projected X/Y coordinates measured in kilometers using the selected map projection and Earth's radius. It calculates the arithmetic mean of all input coordinate tuples and uses that same longitude and latitude as both the Earth anchor and target-object anchor.
 
-Instead, the script follows this sequence for each coordinate:
+For each coordinate, the script preserves the projected kilometer offset from the Earth anchor and applies that unchanged offset around the target anchor using the same projection with the target object's radius. When the resulting X/Y positions are inverse-projected, the shape retains roughly the same physical size but spans more degrees on a smaller object or fewer degrees on a larger object.
 
-1. It finds the arithmetic mean of all input longitude/latitude tuples. This shared mean becomes the source anchor and target anchor.
-2. It projects the Earth longitude and latitude into an X/Y position measured in kilometers.
-3. It measures that position relative to the projected Earth anchor. These are the coordinate's local X/Y offsets.
-4. It applies those same kilometer offsets around the projected target anchor. The offsets are deliberately not rescaled.
-5. It inverse-projects the target X/Y position back into target longitude and latitude.
-
-In other words: the script keeps each point's local projected distance and direction from the anchor, then places that same local shape around the target body. Because the target body has a different radius, the same kilometer distances cover a different number of degrees there. This is the basic size-conversion idea the review script is meant to make easy to inspect.
+The output remains KML, with coordinates intended to be interpreted as planetocentric, east-positive longitude and latitude on the target object.
 
 ## Quick start
 
