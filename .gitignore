@@ -1,6 +1,6 @@
-node_modules/
-*.kml
-*.kmz
-*.ds
-*.dscp
-*.lis
+# Ignore everything
+/*
+workingBuilds\basic_kml_converter_001\node_modules
+
+# Keep this folder and everything inside it
+!/basic_kml_converter_001/

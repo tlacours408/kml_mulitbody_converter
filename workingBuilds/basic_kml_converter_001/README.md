@@ -4,8 +4,6 @@
 
 It reads one KML file, converts every `<coordinates>` element with one of four spherical map projections, and writes one converted KML file. Earth coordinates are projected into kilometer offsets; those offsets are applied unchanged around the target anchor and then inverse-projected using the target radius.
 
-This is a review and teaching script. It is not a batch tool, GUI, or replacement for the larger production converter.
-
 ## Requirements
 
 - Node.js 14.6 or newer
@@ -62,4 +60,3 @@ On success, the script prints one `PASS:` summary with the tuple count, target o
 - One input file and one output file per run.
 - All coordinate altitudes are written as `0` in the output.
 - The anchor is the literal arithmetic mean of parsed longitude/latitude tuples, including repeated closing tuples.
-- The model uses spherical projection equations and unchanged kilometer offsets; it is intended for inspection and validation of the basic conversion logic.
