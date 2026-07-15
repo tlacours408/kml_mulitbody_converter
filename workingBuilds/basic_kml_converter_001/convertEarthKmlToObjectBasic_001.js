@@ -7,6 +7,8 @@ var XMLSerializer = require('@xmldom/xmldom').XMLSerializer;
 
 
 /*
+convertEarthKmlToObjectBasic_001.js
+
 Core conversion rule:
 
 Earth longitude/latitude values are not multiplied by a radius ratio. The
